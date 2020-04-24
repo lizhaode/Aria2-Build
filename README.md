@@ -33,6 +33,8 @@ libtool
 
 然后 `make && make install`
 
+一般每个包安装完成，最好都执行一下 `ldconfig` 或者重启
+
 2. Zlib
 
 [Zlib](https://www.zlib.net/zlib-1.2.11.tar.gz) 从2017年到现在一直没有更新，所以直接下载编译就行
@@ -80,6 +82,16 @@ make && make install
 ```
 
 有可能因为 zlib 编译不过，可以选择添加参数 `--without-libz-prefix` 不适用 zlib 来编译
+
+7. libuv
+
+[官网](https://dist.libuv.org/dist/)下载最新版
+
+```bash
+./autogen.sh
+./configure
+make && make install
+```
 
 
 ### 编译 Aria2
