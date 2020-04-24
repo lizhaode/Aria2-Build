@@ -57,7 +57,6 @@ make && make install
 同样从 [官网](https://github.com/libexpat/libexpat/releases)下载最新版
 
 ```bash
-./buildconf.sh
 ./configure
 make && make install
 ```
