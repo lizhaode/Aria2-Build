@@ -25,7 +25,7 @@ jobs:
         run: |
           wget https://c-ares.haxx.se/download/c-ares-1.16.1.tar.gz
           tar zxvf c-ares-1.16.1.tar.gz
-          cd c-ares
+          cd c-ares-1.16.1
           ./configure
           sudo make -s && sudo make install
       - name: libxml2
