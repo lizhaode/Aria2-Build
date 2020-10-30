@@ -60,7 +60,7 @@ jobs:
         run: |
           sudo ldconfig
           git clone https://github.com/aria2/aria2.git
-          cd arai2
+          cd aria2
           autoreconf -i
           ./configure --enable-static=yes --with-libuv --with-jemalloc ARIA2_STATIC=yes
           sudo make -s
