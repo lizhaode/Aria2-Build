@@ -17,6 +17,7 @@ Ubuntu 这些 Linux 系统，直接使用 `apt install` 安装，版本都不是
 autoconf  
 autopoint  
 libtool
+pkg-config
 
 
 ### 编译安装一些依赖
