@@ -1,6 +1,6 @@
 # Aria2-Build
 
-![fetch rss to mysql](https://github.com/lizhaode/Aria2-Build/workflows/fetch%20rss%20to%20mysql/badge.svg)
+![build aria2](https://github.com/lizhaode/Aria2-Build/workflows/build%20aria2/badge.svg)
 
 
 记录在 Ubuntu 上编译安装 Aria2 的方法
