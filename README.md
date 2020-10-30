@@ -13,12 +13,8 @@ Ubuntu 这些 Linux 系统，直接使用 `apt install` 安装，版本都不是
 ### 依赖
 
 `apt install` 安装一些开发工具包 
-
-pkg-config  
-libcppunit-dev  
+ 
 autoconf  
-automake  
-autotools-dev  
 autopoint  
 libtool
 
