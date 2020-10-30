@@ -23,13 +23,42 @@ jobs:
           sudo make -s && sudo make install
       - name: c-ares
         run: |
-          git clone https://github.com/c-ares/c-ares.git
+          wget https://c-ares.haxx.se/download/c-ares-1.16.1.tar.gz
+          tar zxvf c-ares-1.16.1.tar.gz
           cd c-ares
           ./configure
           sudo make -s && sudo make install
-          
-          
-          
-          
-          
-          
+      - name: libxml2
+        run: |
+          git clone https://gitlab.gnome.org/GNOME/libxml2.git
+          cd libxml2
+          ./configure
+          sudo make -s && sudo make install 
+      - name: sqlite
+        run: |
+          wget https://www.sqlite.org/2020/sqlite-autoconf-3330000.tar.gz
+          tar zxvf sqlite-autoconf-3330000.tar.gz
+          cd sqlite-autoconf-3330000
+          ./configure
+          sudo make -s && sudo make install
+      - name: libuv
+        run: |
+          wget https://dist.libuv.org/dist/v1.40.0/libuv-v1.40.0.tar.gz
+          tar zxvf libuv-v1.40.0.tar.gz
+          cd libuv-v1.40.0
+          sudo ./autogen.sh
+          ./configure
+          sudo make -s && sudo make install
+      - name: jemalloc
+        run: |
+          git clone https://github.com/jemalloc/jemalloc.git
+          cd jemalloc
+          sudo ./autogen.sh
+          sudo make -s && sudo make install
+      - name: build aria2
+        run: |
+          git clone https://github.com/aria2/aria2.git
+          cd arai2
+          autoreconf -i
+          ./configure --enable-static=yes --with-libuv --with-jemalloc ARIA2_STATIC=yes
+          sudo make -s && sudo make install          
