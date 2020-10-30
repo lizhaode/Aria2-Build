@@ -108,6 +108,6 @@ make && make install
 
 ```bash
 autoreconf -i
-./configure --enable-static=yes --with-libuv ARIA2_STATIC=yes
+./configure --enable-static=yes --with-libuv --with-jemalloc ARIA2_STATIC=yes
 make && make install
 ```
