@@ -62,4 +62,10 @@ jobs:
           cd arai2
           autoreconf -i
           ./configure --enable-static=yes --with-libuv --with-jemalloc ARIA2_STATIC=yes
-          sudo make -s && sudo make install          
+          sudo make -s
+          pwd
+          ls     
+      - name: Upload a Build Artifact 
+        uses: actions/upload-artifact@v2.2.0
+        with:
+          path: aria2/
