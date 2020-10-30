@@ -91,6 +91,15 @@ make && make install
 make && make install
 ```
 
+8. jemalloc
+
+从 [Github](https://github.com/jemalloc/jemalloc/tree/master)下载最新版
+
+```bash
+./autogen.sh
+make && make install
+```
+
 
 ### 编译 Aria2
 
