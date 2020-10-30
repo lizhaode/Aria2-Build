@@ -1,0 +1,35 @@
+name: fetch rss to mysql
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  run_main:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2.3.3
+      - name: install requirement
+        run: |
+          apt update
+          apt install autoconf autopoint libtool pkg-config g++ zlib1g-dev
+      - name: openssl
+        run: |
+          git clone https://github.com/openssl/openssl.git
+          cd openssl
+          ./Configure linux-x86_64 no-asm shared
+          make && make install
+      - name: c-ares
+        run: |
+          git clone https://github.com/c-ares/c-ares.git
+          cd c-ares
+          ./configure
+          make && make install
+          
+          
+          
+          
+          
+          
