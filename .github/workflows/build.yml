@@ -64,8 +64,7 @@ jobs:
           autoreconf -i
           ./configure --enable-static=yes --with-libuv --with-jemalloc ARIA2_STATIC=yes
           sudo make -s
-          pwd
-          ls     
+          ls src/
       - name: Upload a Build Artifact 
         uses: actions/upload-artifact@v2.2.0
         with:
