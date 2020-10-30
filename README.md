@@ -52,14 +52,17 @@ apt install zlib1g-dev
 make && make install
 ```
 
-4. libexpat
+4. libxml2
 
-同样从 [官网](https://github.com/libexpat/libexpat/releases)下载最新版
+从 [Gitlab](https://gitlab.gnome.org/GNOME/libxml2)下载最新版
 
 ```bash
 ./configure
 make && make install
 ```
+
+如果是新版的 ubuntu ，可以直接 `apt install libxml2-dev` 与git上的版本一致
+
 
 5. sqlite
 
@@ -79,7 +82,8 @@ make && make install
 make && make install
 ```
 
-有可能因为 zlib 编译不过，可以选择添加参数 `--without-libz-prefix` 不适用 zlib 来编译
+如果不需要 SFTP 功能，可以不装
+
 
 7. libuv
 
