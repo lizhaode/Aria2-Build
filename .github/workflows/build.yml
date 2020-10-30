@@ -17,8 +17,8 @@ jobs:
           sudo apt-get install autoconf autopoint libtool pkg-config g++ zlib1g-dev ca-certificates
       - name: openssl
         run: |
-          git clone https://github.com/openssl/openssl.git
-          cd openssl
+          wget https://www.openssl.org/source/openssl-1.1.1h.tar.gz
+          cd openssl-1.1.1h
           ./Configure linux-x86_64 no-asm shared
           sudo make -s && sudo make install
       - name: c-ares
