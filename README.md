@@ -37,12 +37,10 @@ libtool
 
 2. Zlib
 
-[Zlib](https://www.zlib.net/zlib-1.2.11.tar.gz) 从2017年到现在一直没有更新，所以直接下载编译就行
+Zlib 从2017年到现在一直没有更新，所以直接安装就行
 
 ```bash
-./configure
-make
-make install
+apt install zlib1g-dev
 ```
 
 3. c-ares
