@@ -107,6 +107,6 @@ make && make install
 
 ```bash
 autoreconf -i
-./configure --enable-static=yes --with-libuv --with-libexpat ARIA2_STATIC=yes --with-libexpat
+./configure --enable-static=yes --with-libuv ARIA2_STATIC=yes
 make && make install
 ```
