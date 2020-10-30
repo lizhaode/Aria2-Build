@@ -1,5 +1,8 @@
 # Aria2-Build
 
+![fetch rss to mysql](https://github.com/lizhaode/Aria2-Build/workflows/fetch%20rss%20to%20mysql/badge.svg)
+
+
 记录在 Ubuntu 上编译安装 Aria2 的方法
 
 
@@ -16,9 +19,9 @@ Ubuntu 这些 Linux 系统，直接使用 `apt install` 安装，版本都不是
  
 autoconf  
 autopoint  
-libtool 
-pkg-config 
-g++
+libtool   
+pkg-config   
+g++  
 
 
 ### 编译安装一些依赖
