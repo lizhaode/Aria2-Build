@@ -14,7 +14,7 @@ jobs:
       - name: install requirement
         run: |
           sudo apt-get update
-          sudo apt-get install autoconf autopoint libtool pkg-config g++ zlib1g-dev ca-certificates
+          sudo apt-get install autoconf autopoint libtool pkg-config g++ zlib1g-dev ca-certificates gcc
       - name: openssl
         run: |
           wget https://www.openssl.org/source/openssl-1.1.1h.tar.gz
@@ -63,8 +63,8 @@ jobs:
           git clone https://github.com/aria2/aria2.git
           cd aria2
           autoreconf -i
-          ./configure --enable-static=yes --with-libuv --with-jemalloc --with-ca-bundle='/etc/ssl/certs/ca-certificates.crt' ARIA2_STATIC=yes
-          sudo make -s
+          ./configure --enable-static=yes --with-libuv --with-jemalloc ARIA2_STATIC=yes
+          sudo make -s -j2
           strip src/aria2c
       - name: Upload a Build Artifact 
         uses: actions/upload-artifact@v2.2.0
