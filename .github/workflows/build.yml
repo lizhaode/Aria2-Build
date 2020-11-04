@@ -21,7 +21,7 @@ jobs:
           tar zxvf openssl-1.1.1h.tar.gz
           cd openssl-1.1.1h
           ./Configure linux-x86_64 no-asm shared
-          sudo make -s && sudo make install
+          sudo make -s -j2 && sudo make install
       - name: c-ares
         run: |
           wget https://c-ares.haxx.se/download/c-ares-1.16.1.tar.gz
@@ -63,7 +63,7 @@ jobs:
           git clone https://github.com/aria2/aria2.git
           cd aria2
           autoreconf -i
-          ./configure --enable-static=yes --with-libuv --with-jemalloc ARIA2_STATIC=yes
+          ./configure --enable-static=yes --with-libuv --with-jemalloc --with-ca-bundle='/etc/ssl/certs/ca-certificates.crt' ARIA2_STATIC=yes
           sudo make -s -j2
           strip src/aria2c
       - name: Upload a Build Artifact 
