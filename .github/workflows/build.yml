@@ -63,7 +63,7 @@ jobs:
           git clone https://github.com/aria2/aria2.git
           cd aria2
           autoreconf -i
-          ./configure --enable-static=yes --with-libuv --with-jemalloc ARIA2_STATIC=yes
+          ./configure --enable-static=yes --with-libuv --with-ca-bundle='/etc/ssl/certs/ca-certificates.crt' --with-jemalloc ARIA2_STATIC=yes
           sudo make -s -j2
           strip src/aria2c
       - name: Upload a Build Artifact 
