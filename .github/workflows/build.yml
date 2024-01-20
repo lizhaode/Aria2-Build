@@ -13,10 +13,15 @@ jobs:
     steps:
       - name: Setup upterm session
         uses: mxschmitt/action-tmate@v3
-      - name: install homebrew
-        run: bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-      - name: install aria2
+      - name: install dependency
+        run: 
+      - name: clone aria2
         run: brew update && brew install aria2
+      - name: start build
+        run: |
+          autoreconf -i
+          ./configure --enable-static
+          make && make install
       - name: Upload a Build Artifact 
         uses: actions/upload-artifact@v4.2.0
         with:
