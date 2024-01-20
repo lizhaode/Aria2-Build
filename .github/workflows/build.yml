@@ -58,7 +58,7 @@ jobs:
           autoreconf -i
           ./configure --enable-static=yes --with-libuv --with-ca-bundle='/etc/ssl/certs/ca-certificates.crt' --with-jemalloc ARIA2_STATIC=yes
           sudo make -s -j2
-          strip src/aria2c
+          sudo strip src/aria2c
       - name: Upload a Build Artifact 
         uses: actions/upload-artifact@v4.2.0
         with:
