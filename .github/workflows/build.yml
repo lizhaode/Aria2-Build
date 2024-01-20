@@ -1,13 +1,25 @@
 name: build aria2
 
 on:
+  workflow_dispatch:
   push:
     branches: [ master ]
   pull_request:
     branches: [ master ]
 
 jobs:
-  run_main:
+  mac-build:
+    runs-on: macos-latest
+    steps:
+      - name: install homebrew
+        run: bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+      - name: install aria2
+        run: brew update && brew install aria2
+      - name: Upload a Build Artifact 
+        uses: actions/upload-artifact@v4.2.0
+        with:
+          path: /usr/local/bin/aria2c
+  ubuntu-build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4.1.1
