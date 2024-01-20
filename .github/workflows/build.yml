@@ -34,8 +34,9 @@ jobs:
           git clone https://gitlab.gnome.org/GNOME/libxml2.git
           cd libxml2
           ./autogen.sh
-          ./configure
-          sudo make -s && sudo make install 
+          CFLAGS='-O2 -fno-semantic-interposition' ./configure
+          sudo make -s && sudo make install
+          sudo ldconfig
       - name: sqlite
         run: |
           wget https://www.sqlite.org/2024/sqlite-autoconf-3450000.tar.gz
