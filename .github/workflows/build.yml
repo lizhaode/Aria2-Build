@@ -10,16 +10,16 @@ jobs:
   run_main:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2.3.3
+      - uses: actions/checkout@v4.1.1
       - name: install requirement
         run: |
           sudo apt-get update
-          sudo apt-get install autoconf autopoint libtool pkg-config g++ zlib1g-dev ca-certificates gcc
+          sudo apt-get install -y autoconf autopoint libtool pkg-config g++ zlib1g-dev ca-certificates gcc
       - name: openssl
         run: |
-          wget https://www.openssl.org/source/openssl-1.1.1l.tar.gz
-          tar zxvf openssl-1.1.1l.tar.gz
-          cd openssl-1.1.1l
+          wget https://www.openssl.org/source/openssl-1.1.1w.tar.gz
+          tar zxvf openssl-1.1.1w.tar.gz
+          cd openssl-1.1.1w
           ./Configure linux-x86_64 no-asm shared
           sudo make -s -j2 && sudo make install
       - name: c-ares
@@ -38,16 +38,16 @@ jobs:
           sudo make -s && sudo make install 
       - name: sqlite
         run: |
-          wget https://www.sqlite.org/2021/sqlite-autoconf-3360000.tar.gz
-          tar zxvf sqlite-autoconf-3360000.tar.gz
-          cd sqlite-autoconf-3360000
+          wget https://www.sqlite.org/2024/sqlite-autoconf-3450000.tar.gz
+          tar zxvf sqlite-autoconf-3450000.tar.gz
+          cd sqlite-autoconf-3450000
           ./configure
           sudo make -s && sudo make install
       - name: libuv
         run: |
-          wget https://dist.libuv.org/dist/v1.42.0/libuv-v1.42.0.tar.gz
-          tar zxvf libuv-v1.42.0.tar.gz
-          cd libuv-v1.42.0
+          wget https://dist.libuv.org/dist/v1.47.0/libuv-v1.47.0.tar.gz
+          tar zxvf libuv-v1.47.0.tar.gz
+          cd libuv-v1.47.0
           sudo ./autogen.sh
           ./configure
           sudo make -s && sudo make install
@@ -67,6 +67,6 @@ jobs:
           sudo make -s -j2
           strip src/aria2c
       - name: Upload a Build Artifact 
-        uses: actions/upload-artifact@v2.2.0
+        uses: actions/upload-artifact@v4.2.0
         with:
           path: aria2/src/aria2c
