@@ -26,7 +26,7 @@ jobs:
         run: |
           git clone https://github.com/c-ares/c-ares.git
           cd c-ares
-          ./buildconf
+          autoreconf -fi
           ./configure
           sudo make -s && sudo make install
       - name: libxml2
